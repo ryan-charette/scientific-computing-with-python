@@ -1,4 +1,6 @@
-def arithmetic_arranger(problems):
+#code is not intended to compile on its own. the function must be placed in a larger piece of code on fCC
+
+def arithmetic_arranger():
 
   arranged_line1 = ""
   arranged_line2 = ""
@@ -6,6 +8,7 @@ def arithmetic_arranger(problems):
   arranged_line4 = ""
   
   problem_list = eval(input("Enter arithmetic problem:"))
+  show_answer = eval(input("Enter True to show answers, or False to hide them.")) 
   for problems in problem_list:
 
     values = list()
@@ -33,7 +36,6 @@ def arithmetic_arranger(problems):
       line2 = values[1] + whitespace2 + values[2]
   
     line3 = length * "-"
-
     line4 = ""
     whitespace4 = ""
     answer = None
@@ -49,6 +51,7 @@ def arithmetic_arranger(problems):
     arranged_line3 = arranged_line3 + line3 + "    "
     arranged_line4 = arranged_line4 + line4 + "    "
 
-  arranged_problems = arranged_line1 + "\n" + arranged_line2 + "\n" + arranged_line3 + "\n" + arranged_line4
-    
+  arranged_problems = arranged_line1 + "\n" + arranged_line2 + "\n" + arranged_line3
+  if show_answer == True:
+    arranged_problems += arranged_problems + "\n" + arranged_line4
   return arranged_problems
