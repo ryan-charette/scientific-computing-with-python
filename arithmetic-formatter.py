@@ -1,21 +1,23 @@
-#code is not intended to compile on its own. the function must be placed in a larger piece of code on fCC
-
-def arithmetic_arranger():
+def arithmetic_arranger(problems, answers = False):
 
   arranged_line1 = ""
   arranged_line2 = ""
   arranged_line3 = ""
   arranged_line4 = ""
-  
-  problem_list = eval(input("Enter arithmetic problem:"))
-  show_answer = eval(input("Enter True to show answers, or False to hide them.")) 
-  for problems in problem_list:
+
+  if len(problems) > 5:
+    return "Error: Too many problems."
+
+  for problem in problems:
 
     values = list()
-    operands = problems.split()
+    operands = problem.split()
   
     for value in operands:
-      values.append(value)
+      if(len(value) <= 4):
+        values.append(value)
+      else:
+        return "Error: Numbers cannot be more than four digits."
 
     length = 0
     whitespace1 = ""
@@ -40,9 +42,17 @@ def arithmetic_arranger():
     whitespace4 = ""
     answer = None
     if values[1] == "+":
-      answer = str(int(values[0]) + int(values[2]))
+      try:
+        answer = str(int(values[0]) + int(values[2]))
+      except:
+        return "Error: Numbers must only contain digits."
     elif values[1] =="-":
-      answer = str(int(values[0]) - int(values[2]))
+      try:
+        answer = str(int(values[0]) - int(values[2]))
+      except:
+        return "Error: Numbers must only contain digits."
+    else:
+      return "Error: Operator must be '+' or '-'."
     whitespace4 = " " * (length - len(answer))
     line4 = whitespace4 + answer
 
@@ -51,7 +61,10 @@ def arithmetic_arranger():
     arranged_line3 = arranged_line3 + line3 + "    "
     arranged_line4 = arranged_line4 + line4 + "    "
 
-  arranged_problems = arranged_line1 + "\n" + arranged_line2 + "\n" + arranged_line3
-  if show_answer == True:
-    arranged_problems += arranged_problems + "\n" + arranged_line4
+  arranged_problems = arranged_line1.rstrip() + "\n" + arranged_line2.rstrip() + "\n" + arranged_line3.rstrip()
+  if answers == True:
+    arranged_problems = arranged_problems + "\n" + arranged_line4.rstrip()
   return arranged_problems
+
+#test  
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
