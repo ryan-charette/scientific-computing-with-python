@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # arithmetic-formatter
 "Arithmetic Formatter" project from freeCodeCamp's Scientific Computing with Python certificate. The goal is to make a program using Python that meets the following rules.
 
@@ -45,7 +43,7 @@ If the user supplied the correct format of problems, the conversion you return w
   - Numbers should be right-aligned.
   - There should be four spaces between each problem.
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
-=======
+
 # time-calculator
 Write a function named ```add_time``` that takes in two required parameters and one optional parameter:
 
@@ -80,8 +78,7 @@ add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 ```
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
->>>>>>> aa6f71088f280025c5eee9f883be7d9064a93a95
-=======
+
 # budget-app
 
 Complete the ```Category``` class in ```budget.py```. It should be able to instantiate objects based on different budget categories like *food*, *clothing*, and *entertainment*. When objects are created, they are passed in the name of the category. The class should have an instance variable called ```ledger``` that is a list. The class should also contain the following methods:
@@ -135,4 +132,4 @@ Percentage spent by category
         n     
         g     
 ```
->>>>>>> c9502a4142baa2e0d21320158bef6709e8b2f68b
+
